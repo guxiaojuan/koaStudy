@@ -1,11 +1,12 @@
 ## npm模块介绍
 #### is-genertor-function
 > 判断一个函数是不是generator函数。    
-  Symbol.ToStringTag调用Object.prototype.toString()方法时使用的字符串，用于创建对象描述
+  ES2015以后，Object.prototype.toString()方法返回的值是Symbol.toStringTag，用于创建对象描述
 #### koa-convert
 > 将koa1中的generator转化成koa2中的async。更准确就是将Generator函数转换成使用co包装成的Promise对象
 #### koa-compose
-> koa中间件实现洋葱模型的核心模块。
+> koa中间件实现洋葱模型的核心模块。    
+  主要做了两件事：1）将context一路传递下去；2）将middleware中的下一个中间件fn作为当前中间件未来next返回值
 #### co
 > co库用来自动执行generator函数    
   co函数接受一个generator函数作为参数，返回一个promise对象,该generator函数自动执行
@@ -36,7 +37,7 @@
 2. 检测一个对象的原型    
     1) isPrototypeOf：检测一个对象是否是另一个对象的原型
     2) obj.constructor.prototype：检测非Object.create()创建的原型对象
-3. 每个对象都有一个__proto__属性，每个函数都有prototype属性    
+3. 每个对象(函数也是对象)都有一个__proto__属性，但是只有函数才有prototype属性(Object本身就是构造函数，所以有原型对象)    
 4. 在构造函数的原型对象(prototype)中包含一个指向构造函数的指针(constructor),而构造函数的实例中包含一个指向该构造函数原型对象的指针(__proto__)    
 5. 
 

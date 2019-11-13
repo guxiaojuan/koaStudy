@@ -5,6 +5,7 @@ app.use(async (ctx, next) => {
     ctx.body = 'koa';
     console.log("async function start");
     await next();          //dispatch.bind(null, i + 1)
+    // await next();
     console.log("async function end")
 });
 
