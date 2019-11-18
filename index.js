@@ -3,22 +3,22 @@ const app = new Koa();
 
 app.use(async (ctx, next) => {
     ctx.body = 'koa';
-    console.log("async function start");
+    console.log("async start");
     await next();          //dispatch.bind(null, i + 1)
     // await next();
-    console.log("async function end")
+    console.log("async end")
 });
 
 app.use(function* f1(next) {
-    console.log("f1 start");
-    yield  next;
-    console.log("f1 end");
+    console.log("generator1 start");
+    yield  next();
+    console.log("generator1 end");
 })
 
 app.use(function *(next) {
-    console.log("f2 start");
-    yield  next;
-    console.log("f2 end")
+    console.log("generator2 start");
+    yield  next();
+    console.log("generator2 end")
 })
 
 

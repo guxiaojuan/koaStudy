@@ -39,7 +39,8 @@
     2) obj.constructor.prototype：检测非Object.create()创建的原型对象
 3. 每个对象(函数也是对象)都有一个__proto__属性，但是只有函数才有prototype属性(Object本身就是构造函数，所以有原型对象)    
 4. 在构造函数的原型对象(prototype)中包含一个指向构造函数的指针(constructor),而构造函数的实例中包含一个指向该构造函数原型对象的指针(__proto__)    
-5. 
 
+#### chunk函数
+chunk函数是将多参数的函数转换成单参数的版本，且只接受回调函数作为参数
 
 
