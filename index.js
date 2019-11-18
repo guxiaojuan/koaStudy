@@ -11,13 +11,13 @@ app.use(async (ctx, next) => {
 
 app.use(function* f1(next) {
     console.log("generator1 start");
-    yield  next();
+    yield  next;
     console.log("generator1 end");
 })
 
 app.use(function *(next) {
     console.log("generator2 start");
-    yield  next();
+    yield  next;
     console.log("generator2 end")
 })
 
